@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: url('../img/bg-20px.jpg') repeat;
+    -webkit-background-size: cover;
+    background-size: 10px;
+    font-family: 'Bahianita', cursive;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    //min-width: 960px;
+    margin: 0 auto;
+}
+
+header h1 {
+    background: rgba(0, 0, 0, 0.3);
+    color: black;
+    font-size: 40px;
+    box-shadow: 0 0 3px 3px rgba(1,1,1,0.3);
+    padding: 10px 0;
+    margin-top: 20px;
+    cursor: default;
+}
+
+main {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.block {
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    align-self: auto;
+    margin-top: 50px;
+}
+
+.tetris-block {
+    flex: 0;
+}
+
+.tetris-wrap {
+    width: 360px;
+    height: 600px;
+    border: 5px solid rgba(0,0,0, 0.6);
+    background-color: rgba(0,0,0, 0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px rgba(1,1,1,0.3);
+}
+
+.text-field {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px 3px rgba(1,1,1,0.3);
+    margin-left: 30px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.start {
+    display: block;
+    border: none;
+    background: #fff;
+    padding: 10px;
+}
+
+.start:hover {
+    cursor: pointer;
+    background: red;
+}
+
+#tetris-field {
+    width: 360px;
+    height: 600px;
+}
+.tetris-item {
+    width: 40px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0, 0.4);
+    float: left;
+}
+
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+     background-color: green;
+ }
+.orange {
+    background-color: orange;
+}
+
+
+.score-field {
+    margin-top: 20px;
+}
+
+.rules {
+    margin-top: 20px;
+}
