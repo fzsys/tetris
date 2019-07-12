@@ -106,6 +106,7 @@ main {
     box-sizing: border-box;
     border: 1px solid rgba(0,0,0, 0.4);
     float: left;
+    background-color: #fff;
 }
 
 .blue {
@@ -131,4 +132,9 @@ main {
 
 .rules {
     margin-top: 20px;
+    cursor: default;
+}
+
+.score-field {
+    cursor: default;
 }
