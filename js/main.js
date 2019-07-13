@@ -3,25 +3,24 @@ window.onload = function () {
     let tetris = [];
     let tetrisField = document.querySelector('#tetris-field');
     let scoreField = document.querySelector('.scores');
-    let numOfColors = 5;
+    let numOfColors = 2; // max - 5
+    let speed = 100; // d
     let score = 0;
     let flag;
+    let timer;
+
 
     init();
     draw();
-    square();
     document.querySelector('.start').onclick = run;
+
     document.onkeydown = function (event) {
-        console.log(event);
         switch (event.code) {
             case "ArrowRight":
                 moveRight();
                 break;
             case "ArrowLeft":
                 moveLeft();
-                break;
-            case "ArrowDown":
-                moveDown();
                 break;
         }
         return false;
@@ -38,6 +37,7 @@ window.onload = function () {
             }
         }
     }
+
 
     function draw() {
         let out = '';
@@ -60,41 +60,59 @@ window.onload = function () {
         }
         tetrisField.innerHTML = out;
         scoreField.innerHTML = score;
-        console.table(tetris);
+        console.log(tetris);
     }
+
+
+    function randomInteger(min, max) {
+        let rand = min + Math.random() * (max + 1 - min);
+        rand = Math.floor(rand);
+        return rand;
+    }
+
 
     function square() {
-        function randomInteger(min, max) {
-            let rand = min + Math.random() * (max + 1 - min);
-            rand = Math.floor(rand);
-            return rand;
-        }
-
-        tetris[0][0] = randomInteger(0, numOfColors);
+        tetris[0][0] = randomInteger(1, numOfColors);
     }
 
+
     function run() {
-        draw();
-        flag = true;
-        for (let i = tetris.length - 1; i >= 0; i--) {
-            for (let j = 0; j < tetris[i].length; j++) {
-                if (tetris[i][j] < 10) {
-                    if (tetris[i][j] != 0) {
-                        if (i == tetris.length - 1 || tetris[i + 1][j] > 10) {
-                            tetris[i][j] = tetris[i][j] + 10;
-                        } else if (tetris[i + 1][j] == 0) {
-                            tetris[i + 1][j] = tetris[i][j];
-                            tetris[i][j] = 0;
-                            flag = false;
+         if(document.querySelector('.start')) {
+             document.querySelector('.start').setAttribute('style', 'display:none');
+         }
+
+        if (finish()) {
+            return false;
+        }
+
+        timer = setTimeout(function () {
+
+            if (flag) {
+                square();
+            }
+            draw();
+            flag = true;
+            for (let i = tetris.length - 1; i >= 0; i--) {
+                for (let j = 0; j < tetris[i].length; j++) {
+                    if (tetris[i][j] < 10) {
+                        if (tetris[i][j] != 0) {
+                            if (i == tetris.length - 1 || tetris[i + 1][j] > 10) {
+                                tetris[i][j] = tetris[i][j] + 10;
+                            } else if (tetris[i + 1][j] == 0) {
+                                tetris[i + 1][j] = tetris[i][j];
+                                tetris[i][j] = 0;
+                                flag = false;
+                            }
                         }
                     }
                 }
             }
-        }
-        if (flag) {
-            square();
-        }
+            checkLine();
+
+            run();
+        }, speed);
     }
+
 
     function moveRight() {
         for (let i = tetris.length - 1; i >= 0; i--) {
@@ -110,6 +128,7 @@ window.onload = function () {
         draw();
     }
 
+
     function moveLeft() {
         for (let i = tetris.length - 1; i >= 0; i--) {
             for (let j = 0; j < tetris[i].length; j++) {
@@ -122,5 +141,80 @@ window.onload = function () {
             }
         }
         draw();
+    }
+
+
+    function checkLine() {
+        for (let i = tetris.length - 1; i >= 0; i--) {
+            for (let j = 0; j < tetris[i].length; j++) {
+                if (tetris[i][j] > 10 && tetris[i][j + 1] != undefined && tetris[i][j + 2] != undefined) {
+                    if (tetris[i][j] == tetris[i][j + 1] && tetris[i][j] == tetris[i][j + 2]) {
+                        tetris[i][j] = 0;
+                        tetris[i][j + 1] = 0;
+                        tetris[i][j + 2] = 0;
+                        score += 5;
+                        for (let m = i; m >= 0; m--) {
+                            if (tetris[m][j] > 10) {
+                                tetris[m][j] = tetris[m][j] - 10;
+                            }
+                            if (tetris[m][j + 1] > 10) {
+                                tetris[m][j + 1] = tetris[m][j + 1] - 10;
+                            }
+                            if (tetris[m][j + 2] > 10) {
+                                tetris[m][j + 2] = tetris[m][j + 2] - 10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    function finish() {
+        let stop = false;
+        for (let i = tetris.length - 1; i >= 0; i--) {
+            for (let j = 0; j < tetris[i].length; j++) {
+                stop = true;
+                for (let k = 0; k < tetris.length; k++) {
+                    if (tetris[k][j] == 0) {
+                        stop = false;
+                        break;
+                    }
+                }
+                if (stop) {
+                    clearTimeout(timer);
+                    break;
+                }
+            }
+            if (stop) {
+                createForm();
+                break;
+            }
+        }
+
+        return stop;
+    }
+
+    function createForm() {
+        let form = document.createElement('form');
+        form.innerHTML = '<h2 class="text-center">Save your result:</h2>';
+        form.setAttribute('method', 'POST');
+        form.setAttribute('action', 'handler.php');
+        let hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'score');
+        hiddenInput.setAttribute('value', score);
+        let nameInput = document.createElement('input');
+        nameInput.setAttribute('type', 'text');
+        nameInput.setAttribute('name', 'username');
+        let submitInput = document.createElement('input');
+        submitInput.setAttribute('type', 'submit');
+        submitInput.setAttribute('value', 'Save result');
+        form.appendChild(hiddenInput);
+        form.appendChild(nameInput);
+        form.appendChild(submitInput);
+        document.querySelector('.form').innerHTML = '';
+        document.querySelector('.form').appendChild(form);
     }
 }

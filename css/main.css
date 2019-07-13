@@ -138,3 +138,7 @@ main {
 .score-field {
     cursor: default;
 }
+
+button.hidden {
+    display: none;
+}
