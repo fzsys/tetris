@@ -3,8 +3,8 @@ window.onload = function () {
     let tetris = [];
     let tetrisField = document.querySelector('#tetris-field');
     let scoreField = document.querySelector('.scores');
-    let numOfColors = 2; // max - 5
-    let speed = 100; // d
+    let numOfColors = 5; // max - 5
+    let speed = 20; // d
     let score = 0;
     let flag;
     let timer;
@@ -14,8 +14,8 @@ window.onload = function () {
     draw();
     document.querySelector('.start').onclick = run;
 
-    document.onkeydown = function (event) {
-        switch (event.code) {
+    document.onkeydown = function (e) {
+        switch (e.code) {
             case "ArrowRight":
                 moveRight();
                 break;
@@ -23,7 +23,7 @@ window.onload = function () {
                 moveLeft();
                 break;
         }
-        return false;
+        return true;
     }
 
     function init() {
@@ -203,17 +203,22 @@ window.onload = function () {
         form.setAttribute('action', 'handler.php');
         let hiddenInput = document.createElement('input');
         hiddenInput.setAttribute('type', 'hidden');
-        hiddenInput.setAttribute('name', 'score');
+        hiddenInput.setAttribute('name', 'scores');
         hiddenInput.setAttribute('value', score);
         let nameInput = document.createElement('input');
         nameInput.setAttribute('type', 'text');
-        nameInput.setAttribute('name', 'username');
+        nameInput.setAttribute('name', 'name');
         let submitInput = document.createElement('input');
         submitInput.setAttribute('type', 'submit');
-        submitInput.setAttribute('value', 'Save result');
+        submitInput.setAttribute('class', 'start');
+        submitInput.setAttribute('value', 'Send');
+        let pText = document.createElement('p');
+        pText.setAttribute('class', 'text-center');
+        pText.innerHTML = 'to start new game press F5';
         form.appendChild(hiddenInput);
         form.appendChild(nameInput);
         form.appendChild(submitInput);
+        form.appendChild(pText);
         document.querySelector('.form').innerHTML = '';
         document.querySelector('.form').appendChild(form);
     }
