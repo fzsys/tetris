@@ -83,7 +83,7 @@ main {
 }
 
 .start {
-    margin: 0 auto;
+    margin: 150px auto 0 auto;
     display: block;
     border: none;
     background: #fff;
@@ -103,6 +103,7 @@ main {
 #tetris-field {
     width: 360px;
     height: 600px;
+    overflow: auto;
 }
 .tetris-item {
     width: 40px;
@@ -132,12 +133,13 @@ main {
 }
 
 .score-field {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .rules {
+    margin-top: 10px;
     cursor: default;
     list-style: none;
     padding: 0;
@@ -201,11 +203,134 @@ form p {
     cursor: default;
 }
 
-@media screen and (max-width: 790px) {
+.top-results {
+    margin-bottom: 10px;
+}
+.top-results h2 {
+    font-size: 25px;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+.top-results p {
+    font-size: 20px;
+    cursor: default;
+}
+
+.controller-block {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.controller-block .left, .controller-block .right, .controller-block .down {
+    width: 60px;
+    height: 60px;
+    display: block;
+    border-radius: 30%;
+    border-width: unset;
+    padding: 0;
+    border-style: none;
+    font-size: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.controller-block .left:active, .controller-block .right:active, .controller-block .down:active, .controller-block .left:focus, .controller-block .right:focus, .controller-block .down:focus {
+    outline: none;
+    border: none;
+
+}
+.controller-block .left:active, .controller-block .right:active, .controller-block .down:active {
+    transform: scale(0.9);
+}
+
+.controller-block .down {
+    visibility: hidden;
+    background: #757575 url(../img/down-1.png) center center no-repeat;
+    background-size: 70%;
+}
+
+.controller-block .right {
+    background: #757575 url(../img/right-1.png) center center no-repeat;
+    background-size: 70%;
+}
+.controller-block .left {
+    background: #757575 url(../img/left-1.png) center center no-repeat;
+    background-size: 70%;
+}
+
+.text-mobile-show {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
     main {
-        display: none;
+        display: block;
     }
     .header-description {
         display: block;
     }
+
+    header h1 {
+        font-size: 20px;
+        margin-top: 0;
+        padding: 2px;
+    }
+
+    .text-field {
+        display: none;
+        background: #2F2F2F;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        color: white;
+    }
+
+    .mobile-show {
+        display: block;
+    }
+
+    .tetris-block {
+        margin-top: 10px;
+    }
+
+    .tetris-wrap {
+        width: 270px;
+        height: 450px;
+        margin: 0 auto;
+        border: 3px solid rgba(0,0,0, 0.6);
+    }
+
+    #tetris-field {
+        width: 270px;
+        height: 450px;
+    }
+
+    .tetris-item {
+        width: 30px;
+        height: 30px;
+    }
+
+    .controller-block {
+        display: flex;
+    }
+
+    .rules {
+        display: none;
+    }
+
+    .text-mobile-show {
+        display: block;
+        font-size: 30px;
+    }
+
 }

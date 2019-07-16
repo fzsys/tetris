@@ -1,0 +1,1 @@
+SQLSTATE[HY000] [1045] Access denied for user 'tetris'@'localhost' (using password: NO)SQLSTATE[HY000] [1045] Access denied for user 'tetris'@'localhost' (using password: NO)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tetris.localhost' doesn't exist

@@ -4,15 +4,17 @@ window.onload = function () {
     let tetrisField = document.querySelector('#tetris-field');
     let scoreField = document.querySelector('.scores');
     let numOfColors = 5; // max - 5
-    let speed = 20; // d
+    let speed = 100; // d
     let score = 0;
     let flag;
     let timer;
 
-
     init();
-    draw();
+
     document.querySelector('.start').onclick = run;
+    document.querySelector('.left').onclick = moveLeft;
+    document.querySelector('.right').onclick = moveRight;
+
 
     document.onkeydown = function (e) {
         switch (e.code) {
@@ -25,6 +27,7 @@ window.onload = function () {
         }
         return true;
     }
+
 
     function init() {
         let x = 9;
@@ -77,6 +80,11 @@ window.onload = function () {
 
 
     function run() {
+        if (document.querySelector('.right').hasAttribute('disabled')) {
+            document.querySelector('.right').removeAttribute('disabled');
+            document.querySelector('.left').removeAttribute('disabled');
+        }
+
          if(document.querySelector('.start')) {
              document.querySelector('.start').setAttribute('style', 'display:none');
          }
@@ -84,6 +92,7 @@ window.onload = function () {
         if (finish()) {
             return false;
         }
+
 
         timer = setTimeout(function () {
 
@@ -188,7 +197,9 @@ window.onload = function () {
                 }
             }
             if (stop) {
+                document.querySelector('.text-field').setAttribute('class', 'block text-field mobile-show');
                 createForm();
+
                 break;
             }
         }
@@ -213,6 +224,7 @@ window.onload = function () {
         submitInput.setAttribute('class', 'start');
         submitInput.setAttribute('value', 'Send');
         let pText = document.createElement('p');
+        pText.setAttribute('style', 'color:red');
         pText.setAttribute('class', 'text-center');
         pText.innerHTML = 'to start new game press F5';
         form.appendChild(hiddenInput);
