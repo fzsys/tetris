@@ -4,7 +4,7 @@ window.onload = function () {
     let tetrisField = document.querySelector('#tetris-field');
     let scoreField = document.querySelector('.scores');
     let numOfColors = 5; // max - 5
-    let speed = 100; // d
+    let speed = 300; // d
     let score = 0;
     let flag;
     let timer;
@@ -14,6 +14,7 @@ window.onload = function () {
     document.querySelector('.start').onclick = run;
     document.querySelector('.left').onclick = moveLeft;
     document.querySelector('.right').onclick = moveRight;
+    document.querySelector('.down').onclick = moveDown;
 
 
     document.onkeydown = function (e) {
@@ -23,6 +24,12 @@ window.onload = function () {
                 break;
             case "ArrowLeft":
                 moveLeft();
+                break;
+            case "ArrowDown":
+                moveDown();
+                break;
+            case "ArrowUp":
+                run();
                 break;
         }
         return true;
@@ -63,7 +70,7 @@ window.onload = function () {
         }
         tetrisField.innerHTML = out;
         scoreField.innerHTML = score;
-        console.log(tetris);
+        console.table(tetris);
     }
 
 
@@ -83,6 +90,7 @@ window.onload = function () {
         if (document.querySelector('.right').hasAttribute('disabled')) {
             document.querySelector('.right').removeAttribute('disabled');
             document.querySelector('.left').removeAttribute('disabled');
+            document.querySelector('.down').removeAttribute('disabled');
         }
 
          if(document.querySelector('.start')) {
@@ -146,6 +154,27 @@ window.onload = function () {
                         tetris[i][j - 1] = tetris[i][j];
                         tetris[i][j] = 0;
                     }
+                }
+            }
+        }
+        draw();
+    }
+
+    function moveDown() {
+        for (let i = tetris.length - 1; i >= 0; i--) {
+            for (let j = 0; j < tetris[i].length; j++) {
+                if (tetris[i][j] > 0 && tetris[i][j] < 10) {
+                    //console.log('tetris-i-j:' + tetris[i][j]);
+                    //console.log('tetris-i:' + tetris[i]);
+                    for (let k = tetris.length - 1; k >= 0; k--) {
+                        if (tetris[k][j] == 0) {
+                            //console.log('tetris-k-j:' + tetris[k][j]);
+                            tetris[k][j] = tetris[i][j];
+                            tetris[i][j] = 0;
+                            break;
+                        }
+                    }
+                    break;
                 }
             }
         }

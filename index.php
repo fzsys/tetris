@@ -27,6 +27,7 @@
                         <ul class="rules text-center text-mobile-show">
                             <li>- press the button "START"</li>
                             <li>- left/right arrows to move</li>
+                            <li>- down arrow to speed up</li>
                             <li>- put 3 blocks in the row</li>
                             <li>- every row its 5 point</li>
                         </ul>
@@ -44,6 +45,7 @@
             <ul class="rules text-center">
                 <li>- press the button "START"</li>
                 <li>- left/right arrows to move</li>
+                <li>- down arrow to speed up</li>
                 <li>- put 3 blocks in the row</li>
                 <li>- every row its 5 point</li>
             </ul>

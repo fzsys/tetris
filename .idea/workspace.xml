@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feb5a6e3-c809-44d2-a1a0-0d2d7434529d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/right.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
-              <caret line="35" column="50" selection-end-line="74" />
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -35,22 +32,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="578">
+              <caret line="103" lean-forward="true" selection-end-line="265" selection-end-column="1" />
               <folding>
-                <marker date="1563274057159" expanded="true" signature="5745:6514" ph="..." />
+                <marker date="1563352090509" expanded="true" signature="6822:7591" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="257" column="22" selection-start-line="257" selection-start-column="22" selection-end-line="257" selection-end-column="22" />
-              <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
-              <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+            <state relative-caret-position="606">
+              <caret line="272" column="10" lean-forward="true" selection-end-line="335" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -60,9 +55,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="589">
               <caret line="44" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="n#style#0;n#pre#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,6 +74,7 @@
       <find>rule</find>
       <find>score</find>
       <find>start</find>
+      <find>tabl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,9 +87,9 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/handler.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
       </list>
     </option>
   </component>
@@ -112,6 +105,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,7 +122,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,7 +165,8 @@
       <workItem from="1562998634583" duration="18519000" />
       <workItem from="1563093769856" duration="6700000" />
       <workItem from="1563112290176" duration="8094000" />
-      <workItem from="1563268302539" duration="6670000" />
+      <workItem from="1563268302539" duration="6846000" />
+      <workItem from="1563348982029" duration="3422000" />
     </task>
     <task id="LOCAL-00001" summary="'second'">
       <created>1562910388472</created>
@@ -195,17 +189,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563102394806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="'second'">
+      <created>1563275630687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1563275630688</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55962000" />
+    <option name="totallyTimeSpent" value="59560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09221748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09328358" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -218,7 +219,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.12567714" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.12567714" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -259,18 +260,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="n#style#0;n#pre#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="272" column="10" lean-forward="true" selection-end-line="335" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state relative-caret-position="578">
+          <caret line="103" lean-forward="true" selection-end-line="265" selection-end-column="1" />
           <folding>
-            <marker date="1563274057159" expanded="true" signature="5745:6514" ph="..." />
+            <marker date="1563352090509" expanded="true" signature="6822:7591" ph="..." />
           </folding>
         </state>
       </provider>
@@ -278,16 +283,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
-          <caret line="35" column="50" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="257" column="22" selection-start-line="257" selection-start-column="22" selection-end-line="257" selection-end-column="22" />
-          <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
-          <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
         </state>
       </provider>
     </entry>

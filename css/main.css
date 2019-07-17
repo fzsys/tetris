@@ -248,7 +248,7 @@ form p {
 }
 
 .controller-block .down {
-    visibility: hidden;
+    /*visibility: hidden;*/
     background: #757575 url(../img/down-1.png) center center no-repeat;
     background-size: 70%;
 }
