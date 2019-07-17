@@ -25,9 +25,6 @@ window.onload = function () {
             case "ArrowLeft":
                 moveLeft();
                 break;
-            case "ArrowDown":
-                moveDown();
-                break;
             case "ArrowUp":
                 run();
                 break;
@@ -70,7 +67,6 @@ window.onload = function () {
         }
         tetrisField.innerHTML = out;
         scoreField.innerHTML = score;
-        console.table(tetris);
     }
 
 
