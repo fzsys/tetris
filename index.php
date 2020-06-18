@@ -26,8 +26,8 @@
                         <button class="start">Lets start</button>
                         <ul class="rules text-center text-mobile-show">
                             <li>- press the button "START"</li>
-                            <li>- left/right arrows to move</li>
-                            <li>- down arrow to speed up</li>
+                            <li>- LEFT/RIGHT arrows to move</li>
+                            <li>- UP arrow to speed up</li>
                             <li>- put 3 blocks in the row</li>
                             <li>- every row its 5 point</li>
                         </ul>
@@ -44,8 +44,8 @@
         <div class="block text-field">
             <ul class="rules text-center">
                 <li>- press the button "START"</li>
-                <li>- left/right arrows to move</li>
-                <li>- down arrow to speed up</li>
+                <li>- LEFT/RIGHT arrows to move</li>
+                <li>- UP arrow to speed up</li>
                 <li>- put 3 blocks in the row</li>
                 <li>- every row its 5 point</li>
             </ul>
@@ -57,11 +57,9 @@
             <div class="top-results">
                 <h2 class="text-center">Top results</h2>
                 <?php
-                if ($result) {
-                    foreach ($result as $key => $item) {
-                        if (!empty($item['name'])) {
-                            echo '<p class="results-item text-center">' . $item['name'] . ': ' . $item['scores'] . '</p>';
-                        }
+                if ($results) {
+                    foreach ($results as $result) {
+                        echo '<p class="results-item text-center">' . $result[0] . ': ' . $result[1] . '</p>';
                     }
                 } else {
                     echo '<p class="results-item text-center">are no results yet!</p>';
